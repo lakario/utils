@@ -1,9 +1,10 @@
 var addPager = function() {
 	$('#custpager').remove();
 	
-	$('body').append('<div id="custpager" style="color:#000;background:#ccc;border:1px solid black;padding:10px;position:fixed;top:10px;right:10px;opacity:.75;"> \		<p>Starting at  \		<select name="startIndex" id="custpager-start"></select>, \		show at most \		<select name="startIndex" id="custpager-count"> \
+	$('body').append('<div id="custpager" style="width:475px;color:#000;background:#ccc;border:1px solid black;;position:fixed;top:10px;right:10px;opacity:.75;"> \
+		<div style="width:15px;background:red;float:left;height:45px;"></div> \		<p style="float:left;margin:0;padding:10px 5px;">Starting at  \		<select name="startIndex" id="custpager-start" style="max-width:150px"></select>, \		show at most \		<select name="startIndex" id="custpager-count"> \
 			<option>(default)</option> \			<option>5</option> \
-			<option>10</option> \			<option>20</option> \			<option>30</option> \			<option>40</option> \			<option>50</option> \			<option>60</option> \			<option>70</option> \			<option>80</option> \			<option>90</option> \			<option>100</option> \		</select> \		items.</p> \
+			<option>10</option> \			<option>25</option> \			<option>50</option> \			<option>75</option> \			<option>100</option> \		</select> \		items.</p> \
 		<div id="custpager-status" style="color:red;font-weight:bold;text-align:center;"></div> \	 </div>');
 	 
 	var applyPaging = function() {
@@ -47,5 +48,16 @@ var addPager = function() {
 	
 	$('#custpager-start').on('change', $.proxy(applyPaging));
 	$('#custpager-count').on('change', $.proxy(applyPaging));
+	
+	$('#custpager').on('dblclick', function() {
+		var $this = $(this);
+		if (parseInt($this.css('right')) > 0) {
+			$this.animate({'right': '-465px'}, 'slow');
+		}
+		else {
+			$this.animate({'right': '10px'}, 'slow');
+		}
+		
+	});
 };
 addPager();
