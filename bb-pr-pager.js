@@ -41,7 +41,7 @@ var addPager = function() {
 	var selectHtml = '';
 	$('.bb-udiff').each(function(index, element) {
 		var fileName = $(this).find('h1').text();
-		selectHtml += '<option value="' + index + '">' + index + 1 + '. ' + fileName.substring(fileName.indexOf('/') != -1 ? fileName.lastIndexOf('/') + 1 : 0) + '</option>';
+		selectHtml += '<option value="' + index + '">' + (index + 1) + '. ' + fileName.substring(fileName.indexOf('/') != -1 ? fileName.lastIndexOf('/') + 1 : 0) + '</option>';
 	});
 	$('#custpager-start').append(selectHtml);
 	
