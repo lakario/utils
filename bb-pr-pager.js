@@ -33,7 +33,7 @@ var addPager = function() {
 		
 		var visibleItems = 0;
 		items.each(function(index, element) {
-			if (index < startAt || visibleItems > displayCount) {
+			if (index < startAt || visibleItems >= displayCount) {
 				$(this).hide()
 			}
 			else {
