@@ -1,11 +1,24 @@
 var addPager = function() {
 	$('#custpager').remove();
 	
-	$('body').append('<div id="custpager" style="width:475px;color:#000;background:#ccc;border:1px solid black;;position:fixed;top:10px;right:10px;opacity:.75;"> \
-		<div style="width:15px;background:red;float:left;height:45px;"></div> \		<p style="float:left;margin:0;padding:10px 5px;">Starting at  \		<select name="startIndex" id="custpager-start" style="max-width:150px"></select>, \		show at most \		<select name="startIndex" id="custpager-count"> \
-			<option>(default)</option> \			<option>5</option> \
-			<option>10</option> \			<option>25</option> \			<option>50</option> \			<option>75</option> \			<option>100</option> \		</select> \		items.</p> \
-		<div id="custpager-status" style="color:red;font-weight:bold;text-align:center;"></div> \	 </div>');
+	$('body').append('<div id="custpager" style="width:475px;color:#000;background:#ccc;border:1px solid black;;position:fixed;top:10px;right:10px;height:45px;"> \
+		<div style="width:15px;background:red;float:left;height:45px;"></div> \
+		<div style="float:left;margin:0;padding:10px 5px;"> \
+			<p>Starting at  \
+			<select name="startIndex" id="custpager-start" style="max-width:150px"></select>, \
+			show at most \
+			<select name="startIndex" id="custpager-count"> \
+				<option>(default)</option> \
+				<option>5</option> \
+				<option>10</option> \
+				<option>25</option> \
+				<option>50</option> \
+				<option>75</option> \
+				<option>100</option> \
+			</select> \
+			items.</p> \
+			<div id="custpager-status" style="clear:both;color:red;font-weight:bold;text-align:center;margin-top:15px"></div> \
+		</div> \	 </div>');
 	 
 	var applyPaging = function() {
 		$('body').append('<style type="text/css" id="style-hideall">#pullrequest-diff{display:none!important;}</style>');
